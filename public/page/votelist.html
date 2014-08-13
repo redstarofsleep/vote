@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="/public/jquery/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="/public/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/public/angularjs/angular.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/public/bootstrap/css/bootstrap.min.css"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<title>INDEX</title>
+<script type="text/javascript">
+function VoteListController($scope, $http) {
+	$http({
+		url: '/vote/list'
+	}).success(function(data, status) {
+		$scope.voteList = data;
+	}).error(function(data, status) {
+		alert('error:' + data);
+	});
+}
+</script>
+</head>
+<body ng-controller="VoteListController" class="container">
+	<div class="list-group">
+		<a href="#" ng-repeat="vote in voteList" class="row list-group-item list-group-item-warning">
+			<div class="col-xs-10">
+				<h3>{{vote.title}}</h3>
+			</div>
+			<div class="col-xs-2">
+				<h3><span class="glyphicon glyphicon-ok"></span></h3>
+			</div>
+		</a>
+	</div>
+	<div class="list-group row" style="font-size: 20pt">
+		<a href="#" ng-repeat="vote in voteList" class="list-group-item list-group-item-warning">
+			{{vote.title}}
+			<span class="pull-right"><span class="glyphicon glyphicon-ok"></span></span>
+		</a>
+	</div>
+</body>
