@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript">
+	var ws = null;
+	function startWebSocket() {
+		alert('aaa');
+		if ('WebSocket' in window)
+			ws = new WebSocket('ws://localhost:9000');
+		else if ('MozWebSocket' in window)
+			ws = new MozWebSocket('ws://localhost:9000');
+		else
+			alert('浏览器不支持');
+
+		ws.onmessage = function(evt) {
+			alert(evt.data);
+			document.getElementById('msg').appendChild(document.createTextNode(evt.data));
+			document.getElementById('msg').appendChild(document.createElement('br'));
+		};
+	}
+	</script>
+	</head>
+	<body onload="startWebSocket();">
+		<div id="msg">
+		</div>
+	</body>
+</html>

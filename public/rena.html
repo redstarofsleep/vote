@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="raan">
+<head>
+	<meta charset="utf-8">
+	<title>Ratchet and Angular template</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" type="text/css" href="/public/ratchet/css/ratchet.min.css"/>
+	<link rel="stylesheet" type="text/css" href="/public/ratchet/css/ratchet-theme-ios.min.css"/>
+	<script type="text/javascript" src="/public/ratchet/js/ratchet.min.js"></script>
+	<script type="text/javascript" src="/public/angularjs/angular.min.js"></script>
+	<script type="text/javascript">
+	var raanModule = angular.module('raan', []);
+
+	raanModule.controller('RaanController', function($scope) {
+		var title = 'Ratchet 和 Angular';
+		var contents = ['Ratchet documentation', 'Ratchet on Github', 'Ratchet Google group', 'Ratchet on Twitter'];
+		$scope.title = title;
+		$scope.contents = contents;
+
+		$scope.contentClick = function(index) {
+			$scope.title += index;
+		}
+	});
+	</script>
+</head>
+<body ng-controller="RaanController">
+	<header class="bar bar-nav">
+		<a class="icon icon-left-nav pull-left"></a>
+		<a class="icon icon-compose pull-right"></a>
+		<h1 class="title">{{title}}</h1>
+	</header>
+	<div class="content">
+		<p class="content-padded">Thanks for downloading Ratchet. This is an example HTML page that's linked up to compiled Ratchet CSS and JS, has the proper meta tags and the HTML structure. Need some more help before you start filling this with your own content? Check out some Ratchet resources:
+			移动应用程序原型设计工具Ratchet已经被提升为一个完整的应用程序框架。Ratchet的2.02版已经发布，它使用SASS CSS预处理器（对版本1）进行了彻底地重写。除了彻底改造外，Ratchet如今在现有的基础Ratchet主题之外提供了iOS和Android风格。它现在还提供了一种名为“Ratcheticons”的新图标字体，以及三个示例应用程序来展示不同的主题。文档已经针对新版本进行了彻底修订，项目本身已经迁移到Bootstrap GitHub上，并成为Bootstrap组织的一部分。
+		</p>
+        <ul class="table-view">
+          <li class="table-view-cell" ng-repeat="content in contents">
+            <a class="push-right" href="javascript:void(0);" ng-click="contentClick($index)">
+              <strong>{{content}}</strong>
+            </a>
+          </li>
+          <li class="table-view-cell">
+            <a class="push-right" href="http://goratchet.com">
+              <strong>Ratchet documentation</strong>
+            </a>
+          </li>
+          <li class="table-view-cell">
+            <a class="push-right" href="https://github.com/twbs/ratchet/">
+              <strong>Ratchet on Github</strong>
+            </a>
+          </li>
+          <li class="table-view-cell">
+            <a class="push-right" href="https://groups.google.com/forum/#!forum/goratchet">
+              <strong>Ratchet Google group</strong>
+            </a>
+          </li>
+          <li class="table-view-cell">
+            <a class="push-right" href="https://twitter.com/goratchet">
+              <strong>Ratchet on Twitter</strong>
+            </a>
+          </li>
+          <li class="table-view-cell">
+            <a class="push-right" href="http://goratchet.com">
+              <strong>Ratchet documentation</strong>
+            </a>
+          </li>
+          <li class="table-view-cell">
+            <a class="push-right" href="https://github.com/twbs/ratchet/">
+              <strong>Ratchet on Github</strong>
+            </a>
+          </li>
+          <li class="table-view-cell">
+            <a class="push-right" href="https://groups.google.com/forum/#!forum/goratchet">
+              <strong>Ratchet Google group</strong>
+            </a>
+          </li>
+          <li class="table-view-cell">
+            <a class="push-right" href="https://twitter.com/goratchet">
+              <strong>Ratchet on Twitter</strong>
+            </a>
+          </li>
+        </ul>
+     
+	</div>
+</body>
+</html>

@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="/public/jquery/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="/public/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/public/bootstrap/css/bootstrap.min.css"/>
+<title>INDEX</title>
+<style type="text/css">
+body {
+	background-image: url(resource/2.gif);
+	/*background-color: #F0E68C;*/
+	background-color: #FFFDD0;
+	font-family: consolas, Arial,sans-serif;
+	height: 768px;
+	overflow: hidden;
+}
+.container {height: 768px;position: relative; text-align:center;}
+.xingyunjiang {padding-top: 50px;}
+.jiang {padding-top: 150px;}
+.pageButton {position: absolute;padding: 20px;padding-top:0;}
+.numbox {padding: 0;}
+.num {font-size: 56pt;padding:0;}
+.leftbtn {left: 0; top :0;}
+.rightbtn {right: 0; top :0;}
+.retryLink {position:absolute;top:0;right:20px;display:none;padding:10px;padding-top:0;}
+.clr {clear:both; padding:0; margin:0; width:100%; font-size:0px; line-height:0px;}
+.btn {font-size:56pt;}
+</style>
+<script type="text/javascript">
+//人员配置
+var datas = [
+	{part: 'other', people: [
+		{phone: '67261', name: 'xxx', num: '100'},
+		{phone: '62166', name: 'xxx', num: '101'},
+		{phone: '68114', name: 'xxx', num: '102'},
+		{phone: '68577', name: 'xxx', num: '103'},
+		{phone: '60772', name: 'xxx', num: '104'},
+		{phone: '66777', name: 'xxx', num: '105'},
+		{phone: '66126', name: 'xxx', num: '106'},
+		{phone: '62829', name: 'xxx', num: '107'},
+		{phone: '69636', name: 'xxx', num: '108'},
+		{phone: '61203', name: 'xxx', num: '109'},
+		{phone: '69555', name: 'xxx', num: '110'},
+		{phone: '67936', name: 'xxx', num: '111'},
+		{phone: '68788', name: 'xxx', num: '112'},
+		{phone: '68555', name: 'xxx', num: '113'}
+		
+	]},
+	{part: 'gmsz', people: [
+{phone: '65556', name: '陈宏庆', num: '1'},
+{phone: '61585', name: '袁得', num: '2'},
+{phone: '66600', name: '贾建国', num: '3'},
+{phone: '60006', name: '徐峰', num: '4'},
+{phone: '61418', name: '徐敏', num: '5'},
+//{phone: '67111', name: '江春艳', num: '6'},
+{phone: '66161', name: '闵敏', num: '7'},
+{phone: '61064', name: '柳鹏魁', num: '8'},
+{phone: '61426', name: '张菁', num: '9'},
+{phone: '63636', name: '李惠君', num: '10'},
+{phone: '65656', name: '戴海玉', num: '11'},
+{phone: '64837', name: '张瑛', num: '12'},
+{phone: '62704', name: '孙萍燕', num: '13'},
+{phone: '61697', name: '朱华', num: '14'},
+{phone: '62555', name: '周平', num: '15'},
+{phone: '63200', name: '王萍', num: '16'},
+{phone: '61566', name: '莫文英', num: '17'},
+{phone: '61086', name: '乔春霞', num: '18'},
+{phone: '69828', name: '顾建清', num: '19'},
+{phone: '68333', name: '彭永红', num: '20'},
+{phone: '67333', name: '杨犇', num: '21'},
+{phone: '60373', name: '江珊', num: '22'},
+{phone: '64443', name: '赵长宝', num: '23'},
+{phone: '63912', name: '张艳军', num: '24'},
+{phone: '67982', name: '石纯艳', num: '25'},
+{phone: '62591', name: '瞿康梅', num: '26'},
+{phone: '68989', name: '朱洁勤', num: '27'},
+{phone: '68224', name: '葛海涛', num: '28'},
+{phone: '64835', name: '王以猛', num: '29'},
+{phone: '66323', name: '何小路', num: '30'},
+{phone: '60944', name: '戴四兵', num: '31'},
+{phone: '63011', name: '申元奇', num: '32'},
+{phone: '69400', name: '肖传涛', num: '33'},
+{phone: '63284', name: '嵇祥生', num: '34'},
+{phone: '68998', name: '张峻峰', num: '35'},
+{phone: '62766', name: '汪成成', num: '36'},
+{phone: '60256', name: '钱晓奕', num: '37'},
+{phone: '61093', name: '张东梁', num: '38'},
+{phone: '62757', name: '明章星', num: '39'},
+{phone: '64176', name: '吴彦鋆', num: '40'},
+{phone: '65118', name: '徐泽励', num: '41'},
+{phone: '69141', name: '杨晓东', num: '42'},
+{phone: '66225', name: '龚永', num: '43'},
+{phone: '62083', name: '张勤', num: '44'},
+{phone: '66512', name: '马彦峰', num: '45'},
+{phone: '68137', name: '张军', num: '46'},
+{phone: '68111', name: '余方方', num: '47'},
+{phone: '66359', name: '赵保伟', num: '48'},
+{phone: '69935', name: '谈劲凤', num: '49'},
+{phone: '66098', name: '笪翔飞', num: '50'},
+{phone: '68222', name: '俞建华', num: '51'},
+{phone: '66470', name: '汪宇', num: '52'},
+{phone: '66659', name: '常云', num: '53'},
+{phone: '65680', name: '方朝进', num: '54'},
+{phone: '60808', name: '王宏伟', num: '55'},
+{phone: '60289', name: '曹长征', num: '56'},
+{phone: '68175', name: '沈固', num: '57'},
+{phone: '63852', name: '黄清', num: '58'},
+{phone: '69617', name: '陆海国', num: '59'},
+{phone: '66168', name: '陈凌', num: '60'},
+{phone: '62815', name: '马晋杰', num: '61'},
+{phone: '66036', name: '于洋溢', num: '62'},
+{phone: '63669', name: '顾孝明', num: '63'},
+{phone: '61294', name: '董栋', num: '64'},
+{phone: '61454', name: '沈佳', num: '65'},
+{phone: '67761', name: '李仓', num: '66'},
+{phone: '60333', name: '陈勇', num: '67'},
+{phone: '62111', name: '俞佳', num: '68'},
+//{phone: '61114', name: '孟蕾', num: '69'},
+{phone: '60312', name: '孟蕾', num: '69'},
+{phone: '61216', name: '顾永青', num: '70'},
+{phone: '60827', name: '谢刚', num: '71'},
+{phone: '61723', name: '李智', num: '72'},
+{phone: '62391', name: '李炜', num: '73'},
+{phone: '62590', name: '陆昊晟', num: '74'},
+{phone: '63865', name: '郭若飞', num: '75'},
+{phone: '63892', name: '严文杰', num: '76'},
+{phone: '69235', name: '周方敏', num: '77'},
+{phone: '61895', name: '张潜', num: '78'},
+{phone: '60137', name: '徐凤霞', num: '79'},
+{phone: '67040', name: '周远', num: '80'},
+{phone: '63800', name: '张茂成', num: '81'},
+{phone: '63548', name: '张天飞', num: '82'},
+{phone: '68124', name: '高海涛', num: '83'},
+{phone: '65935', name: '韩月平', num: '84'},
+{phone: '66262', name: '宋斌', num: '85'},
+{phone: '66744', name: '左培恩', num: '86'},
+{phone: '67721', name: '张斌', num: '87'},
+{phone: '69814', name: '漆田田', num: '88'},
+{phone: '69302', name: '曹煜', num: '89'},
+{phone: '69113', name: '邵锐敏', num: '90'},
+{phone: '68168', name: '于宏俊', num: '91'},
+{phone: '67962', name: '张明', num: '92'},
+{phone: '62133', name: '汪东升', num: '93'}
+	]}
+];
+
+// 奖项配置
+var options = [
+	{name: '幸运奖', total: 30, count: 5, distribute: [
+		/*{dep: 'gmsz', size: 4, already: 0},
+		{dep: 'other', size: 2, already: 0},
+		{dep: 'gmsz', size: 6, already: 0},
+		{dep: 'other', size: 3, already: 0},
+		{dep: 'gmsz', size: 3, already: 0},
+		{dep: 'other', size: 5, already: 0},
+		{dep: 'gmsz', size: 7, already: 0},
+		{dep: 'other', size: 4, already: 0},
+		{dep: 'gmsz', size: 5, already: 0},
+		{dep: 'other', size: 3, already: 0},
+		{dep: 'gmsz', size: 5, already: 0},*/
+		{dep: 'gmsz', size: 5, already: 0},
+		{dep: 'other', size: 1, already: 0},
+		{dep: 'gmsz', size: 4, already: 0},
+		{dep: 'gmsz', size: 4, already: 0},
+		{dep: 'other', size: 1, already: 0},
+		{dep: 'gmsz', size: 5, already: 0},
+		{dep: 'gmsz', size: 3, already: 0},
+		{dep: 'other', size: 1, already: 0},
+		{dep: 'gmsz', size: 6, already: 0}
+	]},
+	{name: '三等奖', total: 6, count: 2, distribute: [
+		/*{dep: 'other', size: 1, already: 0},
+		{dep: 'gmsz', size: 4, already: 0},*/
+		{dep: 'gmsz', size: 6, already: 0}
+	]},
+	{name: '二等奖', total: 3, count: 1, distribute: [
+		/*{dep: 'gmsz', size: 2, already: 0},*/
+		{dep: 'gmsz', size: 3, already: 0}
+	]},
+	{name: '一等奖', total: 1, count: 1, distribute: [
+		{dep: 'gmsz', size: 1, already: 0}
+	]},
+	{name: '特等奖', total: 1, count: 1, distribute: [
+		{dep: 'gmsz', size: 1, already: 0}
+	]}
+];
+
+// 需要排除的黑名单
+var blacks = ['000'];
+
+// 定时器,控制号码翻转速度
+var timer = null;
+// 所有的号码
+var phones = [];
+var optionNum = 0;
+// 中奖号码
+var awards = [];
+
+// ******* Web Socket start *******
+var ws = null;
+function startWebSocket() {
+	alert('aaa');
+	if ('WebSocket' in window)
+		ws = new WebSocket('ws://localhost:9000');
+	else if ('MozWebSocket' in window)
+		ws = new MozWebSocket('ws://localhost:9000');
+	else
+		alert('浏览器不支持');
+
+	ws.onmessage = function(evt) {
+		// alert(evt.data);
+		// document.getElementById('msg').appendChild(document.createTextNode(evt.data));
+		// document.getElementById('msg').appendChild(document.createElement('br'));
+	};
+}
+function sendMsg(msg) {    
+    ws.send(msg);    
+}
+// ******* Web Socket end *******
+
+/**
+ * 启动时加载
+ */
+function prepare() {
+	var num = 0;
+	// 把所有号码读入到phones数组中
+	for (var i = 0; i < datas.length; i++) {
+		people = datas[i]['people'];
+		for (var j = 0; j < people.length; j++) {
+			// 判断是否在黑名单中
+			var blackFlag = false;
+			for (var bk in blacks) {
+				if (blacks[bk] == people[j]['phone']) {
+					blackFlag = true;
+					break;
+				}
+			}
+			// 不在黑名单中添加进号码列表
+			if (blackFlag == false) {
+				phones[num] = people[j]['phone'];
+				num++;
+			}
+		}
+	}
+	
+	// 抽奖
+	for (var opt in options) {
+
+		for (dis in options[opt].distribute) {
+		
+			// 读取配置
+			var dep = options[opt].distribute[dis].dep;
+			var size = options[opt].distribute[dis].size;
+
+			var data;
+			// 找到分组
+			for (data in datas) {
+				if (datas[data].part == dep) break;
+			}
+			// 抽取中奖号码
+			for (var i = 0; i < size; i++) {
+				var flag = true;
+				while (flag) {
+					flag = false;
+					var index = Math.floor(Math.random()*datas[data].people.length);
+					var awardPhone = datas[data].people[index].phone;
+					// 已经中奖者不算
+					for (var awph in awards) {
+						if (awards[awph] == awardPhone) flag = true;
+					}
+					// 黑名单中人员不算
+					for (var bk in blacks) {
+						if (blacks[bk] == awardPhone) flag = true;
+					}
+					// 放入中奖列表
+					if (flag == false) {
+						var length = awards.length;
+						awards[length] = awardPhone;
+					}
+				}
+			}
+		}
+	}
+	
+	// 调试用：显示所有号码
+	//for (var award in awards) {
+	//	document.getElementById('test').appendChild(document.createTextNode(awards[award]+' | '));
+	//	if ((-(-award-1)) % 10 == 0) document.getElementById('test').appendChild(document.createElement('br'));
+	//}
+	
+}
+
+var oneCount = 0;
+// 页面上显示的抽奖框
+//var divs = [];
+// 按下键的标志位
+var downFlag = 0;
+// 补抽时显示的标题
+var plusName = options[0].name;
+
+
+/**
+ * 开始
+ */
+function startNum(divids, startBtn, endBtn) {
+	var divs = [];
+	for (var divnum = 0; divnum < divids.length; divnum++) {
+		divs[divnum] = document.getElementById(divids[divnum]);
+	}
+	$('.retryLink').hide();
+	
+	var num = 0;
+	// 定时刷新抽奖框50毫秒刷一次
+	timer = setInterval(function() {
+		for (var k = 0; k < divs.length; k++) {
+			divs[k].removeChild(divs[k].firstChild);
+			//if (num >= phones.length) num = 0;
+			//divs[k].appendChild(document.createTextNode(phones[num]));
+			//num++;
+			
+			var flag = true;
+			var selPhones = [];
+			while (flag) {
+				flag = false;
+				// 从所有号码中随机抽取号码
+				var index = Math.floor(Math.random()*phones.length);
+				var selPhone = phones[index];
+				// 判断是否重复
+				for (var sel in selPhones) {
+					if (selPhones[sel] == selPhone) flag = true;
+				}
+				// 放入页面抽奖框
+				if (flag == false) {
+					selPhones[selPhones.length] = selPhone;
+					divs[k].appendChild(document.createTextNode(selPhone));
+				}
+			}
+		}
+		
+	},50);
+	// 设置按钮
+	document.getElementById(startBtn).style.display = 'none';
+	document.getElementById(endBtn).style.display = 'block';
+	// 设置按键标志位
+//	downFlag++;
+}
+
+// 中奖数组中的下标
+var awardsNum = 0;
+// 重抽标志位
+var plusFlag = false;
+/**
+ * 按下停止
+ */
+function stopNum(divids, stopBtn, groupId) {
+	var divs = [];
+	for (var divnum = 0; divnum < divids.length; divnum++) {
+		divs[divnum] = document.getElementById(divids[divnum]);
+	}
+	$('#'+groupId+' .retryLink').show();
+	
+	// 取消定时器
+	if (timer != null) clearTimeout(timer);
+	
+	// 设置补抽标题（停止之后再按补抽就是当前奖项，否则补抽标题还是上一个奖项）
+	if (plusFlag == false) {
+		plusName = options[optionNum].name;
+	}
+	
+	var i = 0;
+	for (i in divs) {
+		// 设置字体红色
+//		divs[i].className = 'num divcolor';
+		// 移除抽奖框中最后停留的号码
+		divs[i].removeChild(divs[i].firstChild);
+
+		if (awardsNum == awards.length-1) {
+			// 最后一个奖显示礼花（一般最后一个总是大奖）
+//			document.getElementById('zhongLeft').style.display = 'inline';
+//			document.getElementById('zhongRight').style.display = 'inline';
+			// 在中奖框中显示中奖号码
+			divs[i].appendChild(document.createTextNode(awards[awardsNum]));
+		} else {
+			// 不是最后一个奖直接显示中奖号码，不显示礼花
+			divs[i].appendChild(document.createTextNode(awards[awardsNum]));
+		}
+		// 中奖数组位后移
+		awardsNum++;
+		// 如果中奖数组取完了，从头开始取。
+		//if (awardsNum >= awards.length) awardsNum = 0;
+	}
+	
+	// plusFlag==false是正常抽奖，plusFlag==ture是重抽
+	if (plusFlag == false) {
+		// 抽奖次数加1
+		oneCount++;
+		// 如果一个奖项下的奖全部抽完，则抽奖次数规0，跳到下一个奖项，所有奖项抽完则会到第一个
+		if (options[optionNum].total/options[optionNum].count <= oneCount) {
+			oneCount = 0;
+			if (optionNum >= options.length-1) {
+				optionNum = 0;
+			} else {
+				optionNum++;
+			}
+		}
+	} else {
+		// 一次重抽完成，重抽标志复位
+		plusFlag = false;
+	}
+	// 设置按钮
+	/*
+	if (awardsNum >= awards.length)
+		document.getElementById('ready').style.display = 'none';
+	else
+		document.getElementById('ready').style.display = 'block';
+		
+	document.getElementById('endAdwards').style.display = 'none';
+	document.getElementById('startAdwards').style.display = 'none';*/
+	document.getElementById(stopBtn).style.display = 'none';
+	// 设置按键标志位
+	downFlag = 0;
+	
+//	if (('localStorage' in window) && window['localstorage'] !== null) {
+//		localStorage.awards = awards;
+//	}
+}
+
+function retry(retryId, retryBtn) {
+	
+	if (!confirm('确定要重抽吗?')) return;
+
+	// 取消定时器
+	if (timer != null) clearTimeout(timer);
+
+//	divs = [];
+	
+	// 设置头
+//	document.getElementById('awardsName').removeChild(document.getElementById('awardsName').firstChild);
+//	document.getElementById('awardsName').appendChild(document.createTextNode(plusName));
+	
+	// 删除屏幕上旧数据
+//	var oldDiv = document.getElementById('phoneNum').childNodes;
+//	if (oldDiv != null) {
+//		var oldDivLength = oldDiv.length;
+//		for (var j = oldDivLength-1; j >= 0; j--) {
+//			document.getElementById('phoneNum').removeChild(oldDiv[j]);
+//		}
+//	}
+	
+	// 添加一个抽奖框
+//	var div = document.createElement('span');
+//	div.className = 'num';
+//	div.appendChild(document.createTextNode('000'));
+//	document.getElementById('phoneNum').appendChild(div);
+//	divs[0] = div;
+	
+	// 设置按钮
+//	document.getElementById('ready').style.display = 'none';
+//	document.getElementById('endAdwards').style.display = 'none';
+//	document.getElementById('startAdwards').style.display = 'block';
+	
+	// 设置标志位
+	//downFlag++;
+	downFlag = 1;
+	
+	// 隐藏礼花
+//	document.getElementById('zhongLeft').style.display = 'none';
+//	document.getElementById('zhongRight').style.display = 'none';
+
+
+	document.getElementById('retryId').value = retryId;
+	document.getElementById(retryBtn).style.display = 'block';
+	$('#'+retryId).parent().removeClass('alert-danger').addClass('alert-info');
+	$('#'+retryId).text('00000');
+	$('.retryLink').hide();
+	
+	// 已经是重抽了再按一次重抽，不需要动获奖数组
+	if (plusFlag == true) return false;
+	
+	// 重新抽
+	var awardPlus = null;
+	var flag = true;
+	while (flag) {
+		flag = false;
+		//if (awardsNum < awards.length) {
+		//	awardPlus = phones[getRandom(0, phones.length-1)];
+		//} else {
+			for (var data in datas) {
+				if (datas[data].part == 'gmsz') {
+					break;
+				}
+			}
+			awardPlus = datas[data].people[getRandom(0,datas[data].people.length-1)].phone;
+		//}
+		for (var awph in awards) {
+			if (awards[awph] == awardPlus) flag = true;
+		}
+		for (var bk in blacks) {
+			if (blacks[bk] == awardPlus) flag = true;
+		}
+	}
+	
+	for (var i = awards.length; i > awardsNum; i--) {
+		awards[i] = awards[i-1]
+	}
+	awards[awardsNum] = awardPlus;
+	
+	plusFlag = true;
+}
+
+function startRetry(startBtn, endBtn) {
+	var retryId = document.getElementById('retryId').value;
+	startNum([retryId], startBtn, endBtn);
+}
+function stopRetry(endBtn, groupId) {
+	var retryId = document.getElementById('retryId').value;
+	stopNum([retryId], endBtn, groupId);
+}
+
+window.onbeforeunload = function() {
+	return '关闭后数据将会丢失。确定要关闭吗？';
+};
+
+/**
+ * 获取一个在start和end之间的随机数，两边都是闭区间
+ */
+function getRandom(start, end) {
+	return Math.floor(Math.random()*end + start);
+}
+
+function lastGroup(groupId) {
+	$('#'+groupId).slideDown(500);
+}
+function nextGroup(groupId) {
+	$('#'+groupId).slideUp(500);
+}
+
+//function showAwards() {
+//	if (('localStorage' in window) && window['localstorage'] !== null) {
+//		alert(localStorage.awards);
+//	}
+//}
+</script>
+</head>
+<body onload="prepare();">
+<div id="all">
+	<input type="hidden" id="retryId" value=""/>
+	<div class="container xingyunjiang" id="group1">
+		<a href="javascript:void(0);" class="pageButton rightbtn" onclick="nextGroup('group1')" title="下一组"><img src="resource/down.gif"/></a>
+		<div class="row">
+			<div class="col-sm-12" >
+				<h1>幸运奖1/6</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck1', 'group1retrystart');">&nbsp;&nbsp;</a>
+					<h1 class="num" id="luck1">00000</h1>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck2', 'group1retrystart');">&nbsp;&nbsp;</a>
+					<h1 class="num" id="luck2">00000</h1>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck3', 'group1retrystart');">&nbsp;&nbsp;</a>
+					<h1 class="num" id="luck3">00000</h1>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck4', 'group1retrystart');">&nbsp;&nbsp;</a>
+					<h1 class="num" id="luck4">00000</h1>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="alert alert-danger numbox">
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck5', 'group1retrystart');">&nbsp;&nbsp;</a>
+					<h1 class="num" id="luck5">00000</h1>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<input id="group1start" type="button" class="btn btn-primary btn-block btn-lg" onclick="startNum(['luck1','luck2','luck3','luck4','luck5'], 'group1start', 'group1end')" value="启动"/>
+				<input id="group1end" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopNum(['luck1','luck2','luck3','luck4','luck5'], 'group1end', 'group1')" value="停止"/>
+				<input id="group1retrystart" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="startRetry('group1retrystart', 'group1retryend')" value="启动"/>
+				<input id="group1retryend" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopRetry('group1retryend', 'group1')" value="停止"/>
+			</div>
+		</div>
+	</div>
+	<div class="container xingyunjiang" id="group2">
+		<a href="javascript:void(0);" class="pageButton leftbtn" onclick="lastGroup('group1')" title="上一组"><img src="resource/up.gif"/></a>
+		<a href="javascript:void(0);" class="pageButton rightbtn" onclick="nextGroup('group2')" title="下一组"><img src="resource/down.gif"/></a>
+		<div class="row">
+			<div class="col-sm-12"><h1>幸运奖2/6</h1></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck6">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck6', 'group2retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck7">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck7', 'group2retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck8">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck8', 'group2retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck9">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck9', 'group2retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck10">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck10', 'group2retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<input id="group2start" type="button" class="btn btn-primary btn-block btn-lg" onclick="startNum(['luck6','luck7','luck8','luck9','luck10'], 'group2start', 'group2end')" value="启动"/>
+				<input id="group2end" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopNum(['luck6','luck7','luck8','luck9','luck10'], 'group2end', 'group2')" value="停止"/>
+				<input id="group2retrystart" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="startRetry('group2retrystart', 'group2retryend')" value="启动"/>
+				<input id="group2retryend" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopRetry('group2retryend', 'group2')" value="停止"/>
+			</div>
+		</div>
+	</div>
+	<div class="container xingyunjiang" id="group3">
+		<a href="javascript:void(0);" class="pageButton leftbtn" onclick="lastGroup('group2')" title="上一组"><img src="resource/up.gif"/></a>
+		<a href="javascript:void(0);" class="pageButton rightbtn" onclick="nextGroup('group3')" title="下一组"><img src="resource/down.gif"/></a>
+		<div class="row">
+			<div class="col-sm-12"><h1>幸运奖3/6</h1></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck11">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck11', 'group3retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck12">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck12', 'group3retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck13">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck13', 'group3retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck14">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck14', 'group3retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck15">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck15', 'group3retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<input id="group3start" type="button" class="btn btn-primary btn-block btn-lg" onclick="startNum(['luck11','luck12','luck13','luck14','luck15'], 'group3start', 'group3end')" value="启动"/>
+				<input id="group3end" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopNum(['luck11','luck12','luck13','luck14','luck15'], 'group3end', 'group3')" value="停止"/>
+				<input id="group3retrystart" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="startRetry('group3retrystart', 'group3retryend')" value="启动"/>
+				<input id="group3retryend" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopRetry('group3retryend', 'group3')" value="停止"/>
+			</div>
+		</div>
+	</div>
+	<div class="container xingyunjiang" id="group4">
+		<a href="javascript:void(0);" class="pageButton leftbtn" onclick="lastGroup('group3')" title="上一组"><img src="resource/up.gif"/></a>
+		<a href="javascript:void(0);" class="pageButton rightbtn" onclick="nextGroup('group4')" title="下一组"><img src="resource/down.gif"/></a>
+		<div class="row">
+			<div class="col-sm-12"><h1>幸运奖4/6</h1></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck16">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck16', 'group4retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck17">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck17', 'group4retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck18">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck18', 'group4retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck19">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck19', 'group4retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck20">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck20', 'group4retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<input id="group4start" type="button" class="btn btn-primary btn-block btn-lg" onclick="startNum(['luck16','luck17','luck18','luck19','luck20'], 'group4start', 'group4end')" value="启动"/>
+				<input id="group4end" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopNum(['luck16','luck17','luck18','luck19','luck20'], 'group4end', 'group4')" value="停止"/>
+				<input id="group4retrystart" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="startRetry('group4retrystart', 'group4retryend')" value="启动"/>
+				<input id="group4retryend" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopRetry('group4retryend', 'group4')" value="停止"/>
+			</div>
+		</div>
+	</div>
+	<div class="container xingyunjiang" id="group5">
+		<a href="javascript:void(0);" class="pageButton leftbtn" onclick="lastGroup('group4')" title="上一组"><img src="resource/up.gif"/></a>
+		<a href="javascript:void(0);" class="pageButton rightbtn" onclick="nextGroup('group5')" title="下一组"><img src="resource/down.gif"/></a>
+		<div class="row">
+			<div class="col-sm-12"><h1>幸运奖5/6</h1></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck21">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck21', 'group5retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck22">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck22', 'group5retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck23">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck23', 'group5retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck24">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck24', 'group5retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck25">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck25', 'group5retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<input id="group5start" type="button" class="btn btn-primary btn-block btn-lg" onclick="startNum(['luck21','luck22','luck23','luck24','luck25'], 'group5start', 'group5end')" value="启动"/>
+				<input id="group5end" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopNum(['luck21','luck22','luck23','luck24','luck25'], 'group5end', 'group5')" value="停止"/>
+				<input id="group5retrystart" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="startRetry('group5retrystart', 'group5retryend')" value="启动"/>
+				<input id="group5retryend" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopRetry('group5retryend', 'group5')" value="停止"/>
+			</div>
+		</div>
+	</div>
+	<div class="container xingyunjiang" id="group6">
+		<a href="javascript:void(0);" class="pageButton leftbtn" onclick="lastGroup('group5')" title="上一组"><img src="resource/up.gif"/></a>
+		<a href="javascript:void(0);" class="pageButton rightbtn" onclick="nextGroup('group6')" title="下一组"><img src="resource/down.gif"/></a>
+		<div class="row">
+			<div class="col-sm-12"><h1>幸运奖6/6</h1></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck26">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck26', 'group6retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck27">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck27', 'group6retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck28">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck28', 'group6retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck29">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck29', 'group6retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="luck30">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('luck30', 'group6retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<input id="group6start" type="button" class="btn btn-primary btn-block btn-lg" onclick="startNum(['luck26','luck27','luck28','luck29','luck30'], 'group6start', 'group6end')" value="启动"/>
+				<input id="group6end" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopNum(['luck26','luck27','luck28','luck29','luck30'], 'group6end', 'group6')" value="停止"/>
+				<input id="group6retrystart" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="startRetry('group6retrystart', 'group6retryend')" value="启动"/>
+				<input id="group6retryend" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopRetry('group6retryend', 'group6')" value="停止"/>
+			</div>
+		</div>
+	</div>
+	<div class="container jiang" id="group7">
+		<a href="javascript:void(0);" class="pageButton leftbtn" onclick="lastGroup('group6')" title="上一组"><img src="resource/up.gif"/></a>
+		<a href="javascript:void(0);" class="pageButton rightbtn" onclick="nextGroup('group7')" title="下一组"><img src="resource/down.gif"/></a>
+		<div class="row">
+			<div class="col-sm-12"><h1>三等奖1/3</h1></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="three1">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('three1', 'group7retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="three2">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('three2', 'group7retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<input id="group7start" type="button" class="btn btn-primary btn-block btn-lg" onclick="startNum(['three1','three2'], 'group7start', 'group7end')" value="启动"/>
+				<input id="group7end" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopNum(['three1','three2'], 'group7end', 'group7')" value="停止"/>
+				<input id="group7retrystart" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="startRetry('group7retrystart', 'group7retryend')" value="启动"/>
+				<input id="group7retryend" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopRetry('group7retryend', 'group7')" value="停止"/>
+			</div>
+		</div>
+	</div>
+	<div class="container jiang" id="group8">
+		<a href="javascript:void(0);" class="pageButton leftbtn" onclick="lastGroup('group7')" title="上一组"><img src="resource/up.gif"/></a>
+		<a href="javascript:void(0);" class="pageButton rightbtn" onclick="nextGroup('group8')" title="下一组"><img src="resource/down.gif"/></a>
+		<div class="row">
+			<div class="col-sm-12"><h1>三等奖2/3</h1></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="three3">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('three3', 'group8retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="three4">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('three4', 'group8retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<input id="group8start" type="button" class="btn btn-primary btn-block btn-lg" onclick="startNum(['three3','three4'], 'group8start', 'group8end')" value="启动"/>
+				<input id="group8end" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopNum(['three3','three4'], 'group8end', 'group8')" value="停止"/>
+				<input id="group8retrystart" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="startRetry('group8retrystart', 'group8retryend')" value="启动"/>
+				<input id="group8retryend" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopRetry('group8retryend', 'group8')" value="停止"/>
+			</div>
+		</div>
+	</div>
+	<div class="container jiang" id="group9">
+		<a href="javascript:void(0);" class="pageButton leftbtn" onclick="lastGroup('group8')" title="上一组"><img src="resource/up.gif"/></a>
+		<a href="javascript:void(0);" class="pageButton rightbtn" onclick="nextGroup('group9')" title="下一组"><img src="resource/down.gif"/></a>
+		<div class="row">
+			<div class="col-sm-12"><h1>三等奖3/3</h1></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="three5">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('three5', 'group9retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="three6">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('three6', 'group9retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<input id="group9start" type="button" class="btn btn-primary btn-block btn-lg" onclick="startNum(['three5','three6'], 'group9start', 'group9end')" value="启动"/>
+				<input id="group9end" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopNum(['three5','three6'], 'group9end', 'group9')" value="停止"/>
+				<input id="group9retrystart" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="startRetry('group9retrystart', 'group9retryend')" value="启动"/>
+				<input id="group9retryend" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopRetry('group9retryend', 'group9')" value="停止"/>
+			</div>
+		</div>
+	</div>
+	<div class="container jiang" id="group10">
+		<a href="javascript:void(0);" class="pageButton leftbtn" onclick="lastGroup('group9')" title="上一组"><img src="resource/up.gif"/></a>
+		<a href="javascript:void(0);" class="pageButton rightbtn" onclick="nextGroup('group10')" title="下一组"><img src="resource/down.gif"/></a>
+		<div class="row">
+			<div class="col-sm-12"><h1>二等奖1/3</h1></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="two1">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('two1', 'group10retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<input id="group10start" type="button" class="btn btn-primary btn-block btn-lg" onclick="startNum(['two1'], 'group10start', 'group10end')" value="启动"/>
+				<input id="group10end" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopNum(['two1'], 'group10end', 'group10')" value="停止"/>
+				<input id="group10retrystart" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="startRetry('group10retrystart', 'group10retryend')" value="启动"/>
+				<input id="group10retryend" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopRetry('group10retryend', 'group10')" value="停止"/>
+			</div>
+		</div>
+	</div>
+	<div class="container jiang" id="group11">
+		<a href="javascript:void(0);" class="pageButton leftbtn" onclick="lastGroup('group10')" title="上一组"><img src="resource/up.gif"/></a>
+		<a href="javascript:void(0);" class="pageButton rightbtn" onclick="nextGroup('group11')" title="下一组"><img src="resource/down.gif"/></a>
+		<div class="row">
+			<div class="col-sm-12"><h1>二等奖2/3</h1></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="two2">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('two2', 'group11retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<input id="group11start" type="button" class="btn btn-primary btn-block btn-lg" onclick="startNum(['two2'], 'group11start', 'group11end')" value="启动"/>
+				<input id="group11end" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopNum(['two2'], 'group11end', 'group11')" value="停止"/>
+				<input id="group11retrystart" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="startRetry('group11retrystart', 'group11retryend')" value="启动"/>
+				<input id="group11retryend" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopRetry('group11retryend', 'group11')" value="停止"/>
+			</div>
+		</div>
+	</div>
+	<div class="container jiang" id="group12">
+		<a href="javascript:void(0);" class="pageButton leftbtn" onclick="lastGroup('group11')" title="上一组"><img src="resource/up.gif"/></a>
+		<a href="javascript:void(0);" class="pageButton rightbtn" onclick="nextGroup('group12')" title="下一组"><img src="resource/down.gif"/></a>
+		<div class="row">
+			<div class="col-sm-12"><h1>二等奖3/3</h1></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="two3">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('two3', 'group12retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<input id="group12start" type="button" class="btn btn-primary btn-block btn-lg" onclick="startNum(['two3'], 'group12start', 'group12end')" value="启动"/>
+				<input id="group12end" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopNum(['two3'], 'group12end', 'group12')" value="停止"/>
+				<input id="group12retrystart" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="startRetry('group12retrystart', 'group12retryend')" value="启动"/>
+				<input id="group12retryend" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopRetry('group12retryend', 'group12')" value="停止"/>
+			</div>
+		</div>
+	</div>
+	<div class="container jiang" id="group13">
+		<a href="javascript:void(0);" class="pageButton leftbtn" onclick="lastGroup('group12')" title="上一组"><img src="resource/up.gif"/></a>
+		<a href="javascript:void(0);" class="pageButton rightbtn" onclick="nextGroup('group13')" title="下一组"><img src="resource/down.gif"/></a>
+		<div class="row">
+			<div class="col-sm-12"><h1>一等奖</h1></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="one1">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('one1', 'group13retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<input id="group13start" type="button" class="btn btn-primary btn-block btn-lg" onclick="startNum(['one1'], 'group13start', 'group13end')" value="启动"/>
+				<input id="group13end" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopNum(['one1'], 'group13end', 'group13')" value="停止"/>
+				<input id="group13retrystart" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="startRetry('group13retrystart', 'group13retryend')" value="启动"/>
+				<input id="group13retryend" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopRetry('group13retryend', 'group13')" value="停止"/>
+			</div>
+		</div>
+		<!--  
+		<div class="row">
+		<div class="col-sm-1">
+		<input type="button" value="showAwards" onclick="showAwards();"/>
+		</div>
+		</div>
+		-->
+	</div>
+	<div class="container jiang" id="group14">
+		<a href="javascript:void(0);" class="pageButton leftbtn" onclick="lastGroup('group13')" title="上一组"><img src="resource/up.gif"/></a>
+		<div class="row">
+			<div class="col-sm-12"><h1>特等奖</h1></div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<div class="alert alert-danger numbox">
+					<h1 class="num" id="zero1">00000</h1>
+					<a href="javascript:void(0);" class="retryLink" onclick="retry('zero1', 'group14retrystart');">&nbsp;&nbsp;</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3">
+				<input id="group14start" type="button" class="btn btn-primary btn-block btn-lg" onclick="startNum(['zero1'], 'group14start', 'group14end')" value="启动"/>
+				<input id="group14end" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopNum(['zero1'], 'group14end', 'group14')" value="停止"/>
+				<input id="group14retrystart" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="startRetry('group14retrystart', 'group14retryend')" value="启动"/>
+				<input id="group14retryend" type="button" style="display:none;" class="btn btn-primary btn-block btn-lg" onclick="stopRetry('group14retryend', 'group14')" value="停止"/>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
