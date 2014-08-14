@@ -3,12 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="/vote/public/jquery/jquery-1.8.2.js"></script>
-<script type="text/javascript" src="/vote/public/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/vote/public/angularjs/angular.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/vote/public/bootstrap/css/bootstrap.min.css"/>
+<script type="text/javascript" src="/vote/public/bootstrap/js/bootstrap.min.js"></script>
+
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <title>INDEX</title>
+<style type="text/css">
+body { padding-top: 70px; }
+</style>
 <script type="text/javascript">
 function VoteListController($scope, $http) {
 	$http({
@@ -21,21 +25,29 @@ function VoteListController($scope, $http) {
 }
 </script>
 </head>
-<body ng-controller="VoteListController" class="container">
-	<div class="list-group">
-		<a href="#" ng-repeat="vote in voteList" class="row list-group-item list-group-item-warning">
-			<div class="col-xs-10">
-				<h3>{{vote.title}}</h3>
-			</div>
-			<div class="col-xs-2">
-				<h3><span class="glyphicon glyphicon-ok"></span></h3>
-			</div>
-		</a>
+<body ng-controller="VoteListController">
+	<div class="navbar navbar-default navbar-fixed-top" role="tablist">
+		<div class="container">
+			<button type="button" class="btn btn-default navbar-btn btn-sm pull-left">返回</button>
+			<button type="button" class="btn btn-default navbar-btn btn-sm pull-right">完成</button>
+				
+				
+			
+		</div>
 	</div>
-	<div class="list-group row" style="font-size: 20pt">
-		<a href="#" ng-repeat="vote in voteList" class="list-group-item list-group-item-warning">
-			{{vote.title}}
-			<span class="pull-right"><span class="glyphicon glyphicon-ok"></span></span>
-		</a>
+
+	<div class="container">
+	<div class="list-group row">
+		<div ng-repeat="vote in voteList" class="list-group-item list-group-item-warning">
+			<h3>
+			<a href="#" class="list-group-item-warning">{{vote.title}}</a>
+			<span class="pull-right">
+				<button type="button" class="btn btn-warning btn-sm">
+					投票<span class="glyphicon glyphicon-ok"></span>
+				</button>
+			</span>
+			</h3>
+		</div>
+	</div>
 	</div>
 </body>
