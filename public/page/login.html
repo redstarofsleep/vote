@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" src="/vote/public/jquery/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="/vote/public/angularjs/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/vote/public/bootstrap/css/bootstrap.min.css"/>
+	<script type="text/javascript" src="/vote/public/bootstrap/js/bootstrap.min.js"></script>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>LOGIN</title>
+	<script type="text/javascript">
+	function load() {
+		$('#myModal').modal('show');
+	}
+	</script>
+</head>
+<body onload="load();">
+<div class="modal fade bs-example-modal-lg" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">登录</h3>
+      </div>
+      <div class="modal-body">
+        <div role="form">
+        	<div class="form-group">
+        		<input class="form-control" type="text"/>
+        	</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary btn-lg">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</body>
+</html>
