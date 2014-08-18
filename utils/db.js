@@ -6,10 +6,10 @@ var connection = mysql.createConnection({
 	user : 'votedev',
 	password : '123456'
 });
-connection.connect();
+// connection.connect();
 exports.query = function(sql, param, fun) {
 	
-	connection.query(sql, function(err, rows, fields) {
+	connection.query(sql, param, function(err, rows, fields) {
 		fun(rows);
 	});
 	// connection.end();

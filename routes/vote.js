@@ -5,3 +5,9 @@ exports.voteList = function(req, res) {
 		res.send(rows);
 	});
 };
+
+exports.itemList = function(req, res) {
+	db.query('select * from voteitem where voteId=?', [], function(rows) {
+		res.send(rows);
+	})
+}
