@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="voteModule">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript" src="/vote/public/jquery/jquery-1.8.2.js"></script>
@@ -14,7 +14,9 @@
 body { padding-top: 70px; }
 </style>
 <script type="text/javascript">
-function VoteListController($scope, $http) {
+var voteModule = angular.module('voteModule', []);
+
+voteModule.controller('VoteController', function($scope, $http) {
 	$http({
 		url: '/vote/list'
 	}).success(function(data, status) {
@@ -22,10 +24,22 @@ function VoteListController($scope, $http) {
 	}).error(function(data, status) {
 		alert('error:' + data);
 	});
-}
+
+	$scope.gotoVote = function(index) {
+		var voteId = $scope.voteList[index].id;
+		// alert(voteId);
+		$http({
+			url: '/vote/itemlist'
+		}).success(function(data, status) {
+			$scope.itemList = data;
+		}).error(function(data, status) {
+			alert('error:' + data);
+		});
+	};
+});
 </script>
 </head>
-<body ng-controller="VoteListController">
+<body ng-controller="VoteController">
 	<div class="navbar navbar-default navbar-fixed-top" role="tablist">
 		<div class="container">
 			<button type="button" class="btn btn-default navbar-btn btn-sm pull-left">返回</button>
@@ -33,17 +47,32 @@ function VoteListController($scope, $http) {
 	</div>
 
 	<div class="container">
-	<div class="list-group row">
-		<div ng-repeat="vote in voteList" class="list-group-item list-group-item-warning">
-			<h3>
-			<a href="#" class="list-group-item-warning">{{vote.title}}</a>
-			<span class="pull-right">
-				<button type="button" class="btn btn-warning btn-sm">
-					进入<span class="glyphicon glyphicon-ok"></span>
-				</button>
-			</span>
-			</h3>
+		<div class="list-group row">
+			<div ng-repeat="vote in voteList" class="list-group-item list-group-item-warning">
+				<h3>
+					<a href="#" class="list-group-item-warning">{{vote.title}}</a>
+					<span class="pull-right">
+					<button type="button" class="btn btn-warning btn-sm" ng-click="gotoVote($index)">
+						进入<span class="glyphicon glyphicon-chevron-right"></span>
+					</button>
+					</span>
+				</h3>
+			</div>
 		</div>
 	</div>
+
+	<div class="container">
+		<div class="list-group row">
+			<div ng-repeat="item in itemList" class="list-group-item list-group-item-warning">
+				<h3>
+					<a href="#" class="list-group-item-warning">{{item.title}}</a>
+					<span class="pull-right">
+					<button type="button" class="btn btn-warning btn-sm">
+						进入<span class="glyphicon glyphicon-chevron-right"></span>
+					</button>
+					</span>
+				</h3>
+			</div>
+		</div>
 	</div>
 </body>

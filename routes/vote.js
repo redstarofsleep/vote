@@ -7,7 +7,9 @@ exports.voteList = function(req, res) {
 };
 
 exports.itemList = function(req, res) {
+	// var voteId = url.parse(req.url, true).query.voteId;
+	var voteId = 1;
 	db.query('select * from voteitem where voteId=?', [], function(rows) {
 		res.send(rows);
-	})
-}
+	});
+};
