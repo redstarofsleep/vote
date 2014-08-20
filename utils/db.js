@@ -19,3 +19,30 @@ exports.query = function(sql, param, fun) {
 		});
 	});
 };
+
+exports.insert = function(sql, param, fun) {
+	pool.getConnection(function(err, connection) {
+		connection.connect();
+		connection.query(sql, param, function(err, result) {
+			fun(result.insertId);
+		});
+	});
+};
+
+exports.update = function(sql, param, fun) {
+	pool.getConnection(function(err, connection) {
+		connection.connect();
+		connection.query(sql, param, function(err, result) {
+			fun(result.changedRows);
+		});
+	});
+};
+
+exports.delete = function(sql, param, fun) {
+	pool.getConnection(function(err, connection) {
+		connection.connect();
+		connection.query(sql, param, function(err, result) {
+			fun(result.affectedRows);
+		});
+	});
+};

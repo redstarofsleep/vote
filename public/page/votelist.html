@@ -54,7 +54,13 @@ voteModule.controller('VoteController', function($scope, $http) {
 		alert($scope.selItems.length);
 		if ($scope.voteList[$scope.selVoteIndex].itemSelMax == $scope.selItems.length) {
 			if (confirm('Are you sure?')) {
+				$http({
+					url: ''
+				}).success(function(data, status) {
 
+				}).error(function(data, status) {
+					alert('error:' + data);
+				});
 			}
 		}
 	};
