@@ -1,3 +1,4 @@
+var url = require('url');
 var db = require('../utils/db');
 
 exports.voteList = function(req, res) {
@@ -7,9 +8,9 @@ exports.voteList = function(req, res) {
 };
 
 exports.itemList = function(req, res) {
-	// var voteId = url.parse(req.url, true).query.voteId;
-	var voteId = 1;
-	db.query('select * from voteitem where voteId=?', [], function(rows) {
+	var voteId = url.parse(req.url, true).query.voteId;
+	db.query('select * from voteitem where voteId=?', [voteId], function(rows) {
 		res.send(rows);
+		console.log(rows);
 	});
 };
