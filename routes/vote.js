@@ -14,3 +14,12 @@ exports.itemList = function(req, res) {
 		console.log(rows);
 	});
 };
+
+// todo ***Just test
+exports.doVote = function(req, res) {
+	console.log(req.body);
+	console.log(req.body.data);
+	db.insert('insert into voteitem set ?', req.body, function(id) {
+		console.log(id);
+	})
+};

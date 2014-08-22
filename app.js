@@ -27,5 +27,5 @@ app.all('/vote/*', function(req, res, next) {
  * Receive http request
  */
 app.get('/vote/list', vote.voteList);
-// test
 app.get('/vote/itemlist', vote.itemList);
+app.post('/vote/dovote', vote.doVote);
