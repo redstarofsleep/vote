@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="loginModule">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<script type="text/javascript" src="/vote/public/jquery/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="/vote/public/angularjs/angular.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="/vote/public/bootstrap/css/bootstrap.min.css"/>
-	<script type="text/javascript" src="/vote/public/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/vote/public/jquery/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="/vote/public/angularjs/angular.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/vote/public/bootstrap/css/bootstrap.min.css"/>
+<script type="text/javascript" src="/vote/public/bootstrap/js/bootstrap.min.js"></script>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<title>LOGIN</title>
@@ -13,10 +13,29 @@
 	function load() {
 		$('#myModal').modal('show');
 	}
+  var loginModule = angular.module('loginModule', []);
+    loginModule.controller('LoginController', function($scope, $http) {
+    $scope.username = '';
+    $scope.login = function() {
+      $http({
+          url: '/vote/login',
+          method: 'post',
+          data: {username: $scope.username}
+      }).success(function(data, status) {
+        alert(data.resultValue);
+        if (data.resultValue == true) {
+          alert('aaa');
+          window.location.href = '/vote/public/page/votelist.html';
+        }
+      }).error(function(data, status) {
+        alert('error:' + data);
+      });
+    }
+  });
 	</script>
 </head>
 <body onload="load();">
-<div class="modal fade bs-example-modal-lg" id="myModal">
+<div class="modal fade bs-example-modal-lg" id="myModal" ng-controller="LoginController">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -25,12 +44,12 @@
       <div class="modal-body">
         <div role="form">
         	<div class="form-group">
-        		<input class="form-control" type="text"/>
+        		<input class="form-control" ng-model="username" type="text"/>
         	</div>
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary btn-lg">Save changes</button>
+        <button type="button" ng-click="login()" class="btn btn-primary btn-lg">Save changes</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
