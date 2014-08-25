@@ -7,7 +7,7 @@ exports.login = function(req, res) {
 		// res.send(rows);
 		console.log(rows.length);
 		if (rows != null && rows.length > 0) {
-			res.setHeader("Set-Cookie", ["user", rows[0].id]);
+			res.cookie('user',  rows[0].id);
 			res.send({resultType: 'ok', resultValue: true});
 		} else {
 			res.send({resultType: 'ng', resultValue: false});
