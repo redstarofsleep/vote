@@ -12,6 +12,7 @@ var appRootPath = '/vote';
 exports.getRootPath = appRootPath;
 
 app.use(express.bodyParser());
+app.use(express.cookieParser());
 app.use(appRootPath + '/public', express.static('public'));
 
 /**

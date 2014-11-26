@@ -18,8 +18,9 @@ exports.itemList = function(req, res) {
 // todo ***Just test
 exports.doVote = function(req, res) {
 	console.log(req.body);
-	console.log(req.body.data);
-	db.insert('insert into voteitem set ?', req.body, function(id) {
+	var data = req.body;
+	data.userId = req.cookies.user;
+	db.insert('insert into voteitem set ?', data, function(id) {
 		console.log(id);
 	})
 };
